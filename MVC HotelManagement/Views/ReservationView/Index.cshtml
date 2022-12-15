@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MVC_HotelManagement.Models.ReservationViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoofChildrens)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoofAdults)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Checkout)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoofRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phno)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoofChildrens)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoofAdults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Checkin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Checkout)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoofRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phno)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
